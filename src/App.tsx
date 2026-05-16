@@ -77,8 +77,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#78350f,#92400e)",
     badgeColor:"#fbbf24",
     skills:["RPA","Automation","UiPath Studio"],
-    img:"public/images/cert1.png",
-    pdf:"public/images/cert1.png",
+    img:"public/images/Cert1.png",
+    pdf:"public/images/Cert1.png",
   },
   {
     id:"rpa",
@@ -90,8 +90,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#064e3b,#065f46)",
     badgeColor:"#34d399",
     skills:["RPA","Process Automation","Engineering"],
-    img:"public/images/cert2.png",
-    pdf:"public/images/cert2.png",
+    img:"public/images/Cert2.png",
+    pdf:"public/images/Cert2.png",
   },
   {
     id:"msoffice",
@@ -103,8 +103,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#1e3a5f,#1e40af)",
     badgeColor:"#60a5fa",
     skills:["Word","Excel","PowerPoint","Office 365"],
-    img:"public/images/cert3.png",
-    pdf:"public/images/cert3.png",
+    img:"public/images/Cert3.png",
+    pdf:"public/images/Cert3.png",
   },
   {
     id:"opencv",
@@ -116,8 +116,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#0c4a6e,#155e75)",
     badgeColor:"#67e8f9",
     skills:["OpenCV","Image Processing","Python"],
-    img:"public/images/cert4.png",
-    pdf:"public/images/cert4.png",
+    img:"public/images/Cert4.png",
+    pdf:"public/images/Cert4.png",
   },
   {
     id:"ibm",
@@ -129,8 +129,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#1e1b4b,#312e81)",
     badgeColor:"#a78bfa",
     skills:["IBM Cloud","Project Learning","AI"],
-    img:"public/images/cert5.png",
-    pdf:"public/images/cert5.png",
+    img:"public/images/Cert5.png",
+    pdf:"public/images/Cert5.png",
   },
   {
     id:"servicenow",
@@ -142,8 +142,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#500724,#831843)",
     badgeColor:"#f472b6",
     skills:["ServiceNow","ITSM","Administration"],
-    img:"public/images/cert6.png",
-    pdf:"public/images/cert6.png",
+    img:"public/images/Cert6.png",
+    pdf:"public/images/Cert6.png",
   },
 ];
 
@@ -525,7 +525,7 @@ function ProjVisual02() {
 function IPCSLogo() {
   return (
     <img
-      src="public/images/ipcs.jpg"
+      src="public/images/Ipcs.jpg"
       alt="IPCS Global logo"
       style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 12 }}
     />
@@ -535,7 +535,7 @@ function IPCSLogo() {
 function WizbeesLogo() {
   return (
     <img
-      src="public/images/wizbees.png"
+      src="public/images/Wizbees.png"
       alt="Wizbees Technologies logo"
       style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 12 }}
     />
@@ -740,7 +740,7 @@ export default function Portfolio() {
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">View Projects</a>
             <a href="#contact"  className="btn btn-outline">Get In Touch</a>
-            <a href="public/resume.pdf"target="_blank" rel="noreferrer" className="btn btn-resume">Download Resume</a>
+            <a href="public/Resume.pdf"target="_blank" rel="noreferrer" className="btn btn-resume">Download Resume</a>
           </div>
         </div>
       </section>
