@@ -14,6 +14,6 @@ export default defineConfig(({ command }) => ({
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: false,
-    minify: "terser",
+    minify: "esbuild",  // ✅ Changed from "terser" to "esbuild" (built-in, no install needed)
   },
 }));
