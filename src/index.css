@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:      #04040a;
+  --bg2:     #080814;
+  --bg3:     #0c0c1a;
+  --bg4:     #101024;
+  --accent:  #7c3aed;
+  --accent2: #a855f7;
+  --cyan:    #22d3ee;
+  --pink:    #ec4899;
+  --gold:    #f59e0b;
+  --green:   #10b981;
+  --text:    #f1f0ff;
+  --muted:   #7c7a9c;
+  --border:  rgba(124,58,237,0.15);
+  --border2: rgba(124,58,237,0.3);
+  --glass:   rgba(255,255,255,0.02);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a,
+button,
+[role="button"],
+.cert-card {
+  cursor: none;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* CURSOR */
+#cur-dot {
+  width: 10px; height: 10px;
+  background: radial-gradient(circle at 35% 35%, #fff 0 12%, var(--cyan) 35%, var(--accent2) 100%);
+  border-radius: 50%; position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform .18s ease, opacity .2s ease, background .25s ease;
+  box-shadow: 0 0 12px rgba(34,211,238,.9), 0 0 28px rgba(168,85,247,.55);
+  mix-blend-mode: screen;
+}
+#cur-ring {
+  width: 42px; height: 42px;
+  border: 1px solid rgba(34,211,238,.55);
+  background: radial-gradient(circle, rgba(34,211,238,.1) 0%, rgba(168,85,247,.05) 48%, transparent 70%);
+  border-radius: 50%; position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .24s ease, height .24s ease, border-color .24s ease, background .24s ease, opacity .2s ease;
+  box-shadow: 0 0 24px rgba(34,211,238,.12), inset 0 0 16px rgba(124,58,237,.16);
+}
+#cur-ring::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,85,247,.25);
+}
+body.cursor-hover #cur-dot {
+  transform: translate(-50%,-50%) scale(.72);
+  background: #fff;
+  box-shadow: 0 0 14px rgba(255,255,255,.95), 0 0 34px rgba(34,211,238,.75);
+}
+body.cursor-hover #cur-ring {
+  width: 72px;
+  height: 72px;
+  border-color: rgba(236,72,153,.8);
+  background: radial-gradient(circle, rgba(236,72,153,.12) 0%, rgba(34,211,238,.08) 52%, transparent 72%);
+  box-shadow: 0 0 36px rgba(236,72,153,.22), inset 0 0 22px rgba(34,211,238,.12);
+}
+body.cursor-pressed #cur-dot {
+  transform: translate(-50%,-50%) scale(1.6);
+}
+body.cursor-pressed #cur-ring {
+  width: 34px;
+  height: 34px;
+  border-color: rgba(34,211,238,.9);
+}
+body.cursor-away #cur-dot,
+body.cursor-away #cur-ring {
+  opacity: 0;
+}
+
+@media (pointer: coarse) {
+  body,
+  a,
+  button,
+  [role="button"],
+  .cert-card {
+    cursor: auto;
+  }
+
+  #cur-dot,
+  #cur-ring {
+    display: none;
+  }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent), var(--cyan)); }
