@@ -2,8 +2,8 @@ import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  base: "/My_Portfolio/",
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/My_Portfolio/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -16,4 +16,4 @@ export default defineConfig({
     sourcemap: false,
     minify: "terser",
   },
-});
+}));
