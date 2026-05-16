@@ -5,7 +5,7 @@ const PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBg
 
 /* ── devicon base ── */
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
-const RESUME_URL = "/resume.pdf";
+const RESUME_URL = "public/resume.pdf";
 
 const SKILLS = [
   { name:"Python",            sub:"Backend Language",        cat:"Backend",  icon:`${DI}/python/python-original.svg`,      color:"#3776AB" },
