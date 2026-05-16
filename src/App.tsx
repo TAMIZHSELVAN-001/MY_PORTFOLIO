@@ -78,8 +78,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#78350f,#92400e)",
     badgeColor:"#fbbf24",
     skills:["RPA","Automation","UiPath Studio"],
-    img:"/cert1.png",
-    pdf:"/cert1.pdf",
+    img:"src/assets/cert1.png",
+    pdf:"src/assets/cert1.png",
   },
   {
     id:"rpa",
@@ -91,8 +91,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#064e3b,#065f46)",
     badgeColor:"#34d399",
     skills:["RPA","Process Automation","Engineering"],
-    img:"/cert2.png",
-    pdf:"/cert2.pdf",
+    img:"src/assets/cert2.png",
+    pdf:"src/assets/cert2.png",
   },
   {
     id:"msoffice",
@@ -104,8 +104,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#1e3a5f,#1e40af)",
     badgeColor:"#60a5fa",
     skills:["Word","Excel","PowerPoint","Office 365"],
-    img:"/cert3.png",
-    pdf:"/cert3.pdf",
+    img:"src/assets/cert3.png",
+    pdf:"src/assets/cert3.png",
   },
   {
     id:"opencv",
@@ -117,8 +117,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#0c4a6e,#155e75)",
     badgeColor:"#67e8f9",
     skills:["OpenCV","Image Processing","Python"],
-    img:"/cert4.png",
-    pdf:"/cert4.pdf",
+    img:"src/assets/cert4.png",
+    pdf:"src/assets/cert4.png",
   },
   {
     id:"ibm",
@@ -130,8 +130,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#1e1b4b,#312e81)",
     badgeColor:"#a78bfa",
     skills:["IBM Cloud","Project Learning","AI"],
-    img:"/cert5.png",
-    pdf:"/cert5.pdf",
+    img:"src/assets/cert5.png",
+    pdf:"src/assets/cert5.png",
   },
   {
     id:"servicenow",
@@ -143,8 +143,8 @@ const CERTS = [
     bg:"linear-gradient(135deg,#500724,#831843)",
     badgeColor:"#f472b6",
     skills:["ServiceNow","ITSM","Administration"],
-    img:"/cert6.png",
-    pdf:"/cert6.pdf",
+    img:"src/assets/cert6.png",
+    pdf:"src/assets/cert6.png",
   },
 ];
 
@@ -526,7 +526,7 @@ function ProjVisual02() {
 function IPCSLogo() {
   return (
     <img
-      src="/ipcs.jpg"
+      src="src/assets/ipcs.jpg"
       alt="IPCS Global logo"
       style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 12 }}
     />
@@ -536,7 +536,7 @@ function IPCSLogo() {
 function WizbeesLogo() {
   return (
     <img
-      src="/wizbees.png"
+      src="src/assets/wizbees.png"
       alt="Wizbees Technologies logo"
       style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 12 }}
     />
