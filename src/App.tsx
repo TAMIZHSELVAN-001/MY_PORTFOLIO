@@ -5,7 +5,6 @@ const PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBg
 
 /* ── devicon base ── */
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
-const RESUME_URL = "public/resume.pdf";
 
 const SKILLS = [
   { name:"Python",            sub:"Backend Language",        cat:"Backend",  icon:`${DI}/python/python-original.svg`,      color:"#3776AB" },
@@ -741,7 +740,7 @@ export default function Portfolio() {
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">View Projects</a>
             <a href="#contact"  className="btn btn-outline">Get In Touch</a>
-            <a href={RESUME_URL} target="_blank" rel="noreferrer" className="btn btn-resume">Download Resume</a>
+            <a href="public/resume.pdf"target="_blank" rel="noreferrer" className="btn btn-resume">Download Resume</a>
           </div>
         </div>
       </section>
