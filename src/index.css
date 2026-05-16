@@ -113,3 +113,81 @@ body.cursor-away #cur-ring {
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent), var(--cyan)); }
+
+/* MOBILE OPTIMIZATIONS */
+@media (max-width: 768px) {
+  /* Touch-friendly button sizing */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  * {
+    animation-duration: 0.3s !important;
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px;
+    border-radius: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Better spacing for touch */
+  input, textarea, select {
+    padding: 12px 14px;
+  }
+
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+
+  /* Improve scrolling performance */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Prevent double tap zoom */
+  a, button, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  /* Optimize transitions for mobile */
+  * {
+    transition-duration: 0.2s !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Stack elements efficiently on small screens */
+  button, .btn {
+    display: block;
+    width: 100%;
+  }
+
+  /* Improve spacing */
+  section {
+    overflow-x: hidden;
+  }
+
+  /* Better image handling */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Reduce blur effects on very small devices for performance */
+  .orb {
+    filter: blur(40px) !important;
+  }
+}

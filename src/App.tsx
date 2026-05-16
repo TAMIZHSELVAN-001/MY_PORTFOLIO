@@ -359,12 +359,56 @@ const CSS_STYLES = `
     .about-stats{max-width:100%;}
     .proj-grid,.skills-grid,.intern-grid,.certs-grid{grid-template-columns:1fr;}
     footer{flex-direction:column;gap:8px;}
+    .contact-form-message{font-size:12px;padding:10px;}
+  }
+  @media(max-width:768px){
+    section{padding:56px 20px;}
+    .sec-title{font-size:clamp(28px,6vw,40px);margin-bottom:40px;}
+    .hero{padding:80px 20px 60px;}
+    .hero-desc{font-size:14px;}
+    .hero-cta{gap:12px;margin-top:32px;}
+    .btn{padding:11px 28px;font-size:11px;}
+    .contact-form input,.contact-form textarea{padding:12px 16px;font-size:13px;}
+    .contact-form textarea{min-height:120px;max-height:180px;}
+    .proj-card,.skill-card,.cert-card,.intern-card{border-radius:10px;}
+    .contact-link{padding:14px 16px;font-size:13px;gap:12px;}
   }
   @media(max-width:520px){
-    .hero-name{font-size:clamp(24px,7vw,32px);}
+    section{padding:40px 16px;}
+    .hero-name{font-size:clamp(24px,6vw,32px);}
     .hero-badge{font-size:10px;letter-spacing:2px;}
+    .hero-desc{font-size:13px;line-height:1.6;max-width:100%;}
+    .hero-cta{flex-direction:column;gap:10px;margin-top:24px;}
+    .btn{width:100%;padding:10px 20px;font-size:10px;letter-spacing:1px;}
     .about-stats{grid-template-columns:1fr;gap:18px;}
     .stat{border-left:0;border-top:2px solid var(--accent);padding:16px 0;}
+    .sec-title{font-size:clamp(20px,5vw,28px);margin-bottom:28px;}
+    .sec-label{font-size:11px;letter-spacing:3px;}
+    .contact-form{gap:12px;}
+    .contact-form input,.contact-form textarea{padding:11px 14px;font-size:13px;border-radius:6px;}
+    .contact-form textarea{min-height:100px;max-height:160px;}
+    .contact-link{flex-direction:column;text-align:center;padding:12px 14px;font-size:12px;height:auto;}
+    .contact-link-icon{width:20px;}
+    .contact-link-icon svg,.contact-link-icon img{width:16px;height:16px;}
+    .contact-links{grid-template-columns:1fr;}
+    .cert-card{border-radius:8px;padding:12px;}
+    .proj-card{border-radius:8px;}
+    .skill-card{border-radius:8px;}
+    footer{font-size:12px;gap:12px;padding:0 16px;}
+  }
+  @media(max-width:380px){
+    section{padding:32px 12px;}
+    .hero{padding:60px 12px 48px;}
+    .hero-name{font-size:clamp(20px,6vw,26px);}
+    .hero-badge{font-size:9px;padding:6px 12px;}
+    .btn{padding:9px 16px;font-size:9px;}
+    .sec-title{font-size:clamp(18px,5vw,24px);margin-bottom:20px;}
+    .contact-form input,.contact-form textarea{padding:10px 12px;font-size:12px;}
+    .contact-form textarea{min-height:90px;}
+    .contact-form-message{font-size:11px;padding:8px;}
+    .about-photo{aspect-ratio:3/4;}
+    .nav-logo{font-size:14px;}
+    footer{font-size:11px;}
   }
 `;
 
@@ -479,7 +523,7 @@ function ProjVisual02() {
 }
 
 /* ── INTERNSHIP COMPANY LOGOS (SVG, no emoji) ─────────── */
-function IPCSLogo({ color }: { color?: string }) {
+function IPCSLogo() {
   return (
     <img
       src="/ipcs.jpg"
@@ -489,7 +533,7 @@ function IPCSLogo({ color }: { color?: string }) {
   );
 }
 
-function WizbeesLogo({ color }: { color?: string }) {
+function WizbeesLogo() {
   return (
     <img
       src="/wizbees.png"
@@ -806,8 +850,8 @@ export default function Portfolio() {
               <div className="intern-header">
                 <div className="intern-logo-box" style={{background:`${it.color}15`}}>
                   {it.company==="IPCS Global"
-                    ? <IPCSLogo color={it.color}/>
-                    : <WizbeesLogo color={it.color}/>
+                    ? <IPCSLogo/>
+                    : <WizbeesLogo/>
                   }
                 </div>
                 <div className="intern-title-col">
