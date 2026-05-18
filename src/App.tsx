@@ -552,7 +552,27 @@ function WizbeesLogo() {
 }
 
 /* ── CERT MODAL ────────────────────────────────────────── */
+const downloadFile = async (url: string, filename: string) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+  } catch (error) {
+    console.error(error);
+    window.location.href = url;
+  }
+};
+
 function CertModal({ cert, onClose }: { cert: typeof CERTS[0] | null; onClose: () => void }) {
+  const [imageError, setImageError] = useState(false);
   if (!cert) return null;
   return (
     <div className="cert-modal-overlay" onClick={onClose}>
@@ -560,11 +580,12 @@ function CertModal({ cert, onClose }: { cert: typeof CERTS[0] | null; onClose: (
         <button className="cert-modal-close" onClick={onClose}>✕</button>
         <div className="cert-modal-body" style={{padding:0}}>
           <div className="cert-modal-preview">
-            {cert.img ? (
+            {cert.img && !imageError ? (
               <img
                 src={cert.img}
                 alt={`Certificate preview - ${cert.title}`}
                 style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
+                onError={() => setImageError(true)}
               />
             ) : (
               <iframe
@@ -573,6 +594,16 @@ function CertModal({ cert, onClose }: { cert: typeof CERTS[0] | null; onClose: (
                 style={{ width: '100%', height: '85vh', border: 'none' }}
               />
             )}
+          </div>
+          <div className="cert-modal-actions">
+            <button
+              type="button"
+              className="cert-btn cert-btn-view"
+              style={{ background: cert.color }}
+              onClick={() => downloadFile(cert.pdf, `${cert.id}.png`)}
+            >
+              ⬇ Download Certificate
+            </button>
           </div>
         </div>
       </div>
@@ -748,8 +779,8 @@ export default function Portfolio() {
           <p className="hero-desc">Computer Science engineer with hands-on experience in full-stack development, IoT systems, and computer vision. Building real-world solutions.</p>
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="#contact"  className="btn btn-outline">Get In Touch</a>
-            <a href={resumePDF} download="Resume.pdf" className="btn btn-resume">Download Resume</a>
+            <a href="#contact" className="btn btn-outline">Get In Touch</a>
+            <button type="button" className="btn btn-resume" onClick={() => downloadFile(resumePDF, "Resume.pdf")}>Download Resume</button>
           </div>
         </div>
       </section>
